@@ -8,15 +8,6 @@
   scroll-behavior: smooth;
 }
 
-:root {
-  --font-color: black;
-  --secondary-font-color: rgb(110, 110, 110);
-  --bg-color: white;
-  --ico-color: #00abf0;
-  --ternary-color: #00abf0;
-  --quaternary-color: #f000e4;
-}
-
 body {
   background-color: var(--bg-color);
   color: var(--font-color);
@@ -57,12 +48,9 @@ header {
   flex-direction: column;
 }
 
-.nav-links a i {
-  font-size: 23px;
-}
-
-.social-links a i {
-  font-size: 25px;
+.nav-links a svg,
+.social-links a svg {
+  font-size: var(--side-nav-icons-size);
 }
 
 .nav-links a:hover,
@@ -72,12 +60,297 @@ header {
 
 }
 
-.theme {
+.theme-btn {
   margin-bottom: 10px;
+}
+
+.theme-btn>button {
+  cursor: pointer;
+  padding-top: 0.5rem;
+  background-color: transparent;
+  border: none;
+}
+
+.theme-btn>button>svg {
+  font-size: var(--side-nav-icons-size);
+  color: var(--secondary-font-color);
+  cursor: pointer;
 }
 
 main {
   display: flex;
   flex-direction: column;
-  margin: 0px 0px 0px 70px;
+  width: 100%;
+  padding: 0px 0px 0px 70px;
+}
+
+
+section {
+  padding: 20px;
+  
+  /* Show the active section */
+}
+
+section .sec-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+section .sec-content {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+/* Home Section */
+
+section.home {
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+  height: 100vh;
+}
+
+section.home h1 {
+  position: relative;
+  font-size: 49px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+section.home .home-content h1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-color);
+  font-size: 25px;
+  animation: showRight 1s ease forwards;
+  animation-delay: 1s;
+}
+
+section.home .home-content h3 {
+  position: relative;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--ternary-color);
+}
+
+section.home .home-content h3::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-color);
+  font-size: 25px;
+  animation: showRight 1s ease forwards;
+  animation-delay: 1.3s;
+}
+
+section.home p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+section.home .home-content {
+  max-width: 1300px;
+}
+
+.home-content .btn-box {
+  display: flex;
+  justify-content: space-between;
+  width: 345px;
+  height: 50px;
+}
+
+.home-content .btn-box a {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 100%;
+  background: var(--ternary-color);
+  border: 2px solid var(--ternary-color);
+  border-radius: 8px;
+  font-size: 19px;
+  color: var(--bg-color);
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-weight: 600;
+  z-index: 1;
+  overflow: hidden;
+  transition: .5s;
+
+}
+
+.home-content .btn-box a:hover {
+  color: var(--ternary-color);
+  border: 2px solid var(--ternary-color);
+}
+
+.home-content .btn-box a:nth-child(2) {
+  background: transparent;
+  color: var(--ternary-color);
+  transition: .5s;
+}
+
+.home-content .btn-box a:nth-child(2):hover {
+  color: var(--bg-color);
+  border: 2px solid var(--ternary-color);
+
+}
+
+.home-content .btn-box a:nth-child(2)::before {
+  background: var(--ternary-color);
+}
+
+.home-content .btn-box a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: var(--bg-color);
+  z-index: -1;
+  transition: .5s;
+  border-radius: 8px;
+
+
+}
+
+.home-content .btn-box a:hover::before {
+  width: 100%;
+}
+
+
+
+@keyframes showRight {
+  100% {
+    width: 0;
+  }
+}
+
+/* End-Home Section */
+/* About Section */
+
+.about .sec-content .about-p {
+  text-align: justify;
+  letter-spacing: .5px;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  color: var(--secondary-font-color);
+}
+
+/* End-About Section */
+/* Curriculums Section */
+
+section.curriculums .curriculums-content {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 20px;
+}
+
+.curriculum-icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+section.curriculums .curriculums-content .content h3 {
+  font-size: 1.3rem;
+}
+
+section.curriculums .curriculums-content .content div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+}
+
+.curriculums-content .content {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  padding: 5px;
+  /* border: 1px solid var(--font-color); */
+  border-radius: 5px;
+  width: fit-content;
+  height: fit-content;
+  max-width: 1500px;
+}
+
+.curriculums-content .content div span {
+  color: var(--font-color);
+  background-color: var(--ternary-color);
+  margin-right: 5px;
+  border-radius: 50px;
+  margin-bottom: 5px;
+  font-size: normal;
+
+  padding: 0px 5px;
+}
+
+/*End-Curriculums Section */
+
+/* Tasks Secttion */
+
+section.tasks {
+  display: flex;
+  flex-direction: column;
+}
+
+section .tasks-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-left: 20px;
+}
+
+section .tasks-container .task {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  width: fit-content;
+  height: fit-content;
+  max-width: 1500px;
+}
+
+section .tasks-container .task h3 {
+  font-size: 1.3rem;
+}
+
+section .tasks-container .task div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+section .tasks-container .task div a {
+  color: var(--font-color);
+  background-color: var(--ternary-color);
+  text-decoration: none;
+  margin-right: 5px;
+  border-radius: 50px;
+  margin-bottom: 5px;
+  font-size: normal;
+  padding: 0px 6px;
+  transition: 0.3s;
+  border: 2px solid var(--ternary-color);
+}
+
+section .tasks-container .task div a:hover {
+  background-color: transparent;
+  color: var(--ternary-color);
+  border: 2px solid var(--ternary-color);
 }

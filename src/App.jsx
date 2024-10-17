@@ -1,19 +1,36 @@
+import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
-import './theme-data.css'
-import Home from './pages/Home'
-import About from './pages/About'
-import Curriculums from './pages/Curriculums'
-import Tasks from './pages/Tasks'
-import Projects from './pages/Projects'
 
-import Header from './components/Header'
+import Home from './routes/Home'
+import About from './routes/About'
+import Curriculums from './routes/Curriculums'
+import Tasks from './routes/Tasks'
+import Projects from './routes/Projects'
 
+import SideNavBar from './components/SideNavBar'
 
 function App() {
+  const [theme, setTheme] = useState('light')
+
+  const toggleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light')
+  }
+
+  let root = document.querySelector(':root')
+  root.style.setProperty('--font-color:', theme === 'light' ? 'black' : 'rgba(255, 255, 255, 0.884)')
+  root.style.setProperty('--secondary-font-color', theme === 'light' ? 'rgb(110, 110, 110)' : 'rgb(206, 206, 206)')
+  root.style.setProperty('--bg-color', theme === 'light' ? 'white' : 'black')
+  root.style.setProperty('--ico-color', theme === 'light' ? '#00abf0' : '#00abf0')
+  root.style.setProperty('--ternary-color', theme === 'light' ? '#00abf0' : '#f000e4')
+  root.style.setProperty('--quaternary-color', theme === 'light' ? '#f000e4' : '#00abf0')
+
   return (
     <BrowserRouter>
-      <Header />
+      <SideNavBar
+        theme={theme}
+        toggleTheme={toggleTheme}
+      />
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
