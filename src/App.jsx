@@ -5,7 +5,6 @@ import './App.css'
 import Home from './routes/Home'
 import About from './routes/About'
 import Curriculums from './routes/Curriculums'
-import Tasks from './routes/Tasks'
 import Projects from './routes/Projects'
 
 import SideNavBar from './components/SideNavBar'
@@ -36,7 +35,6 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/curriculums" element={<Curriculums />} />
-          <Route path="/tasks" element={<Tasks />} />
           <Route path="/projects" element={<Projects />} />
         </Routes>
       </main>

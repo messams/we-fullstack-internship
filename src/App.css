@@ -87,11 +87,12 @@ main {
 
 section {
   padding: 20px;
-  
+
   /* Show the active section */
 }
 
 section .sec-title {
+  color: var(--ternary-color);
   font-size: 2rem;
   margin-bottom: 20px;
 }
@@ -300,57 +301,75 @@ section.curriculums .curriculums-content .content div {
 }
 
 /*End-Curriculums Section */
+/* Projects Section */
 
-/* Tasks Secttion */
-
-section.tasks {
+.projects-container {
   display: flex;
-  flex-direction: column;
-}
-
-section .tasks-container {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  flex-direction: row;
   margin-left: 20px;
 }
 
-section .tasks-container .task {
-  display: flex;
-  flex-direction: column;
-  margin: 5px;
-  padding: 5px;
-  border-radius: 5px;
-  width: fit-content;
-  height: fit-content;
-  max-width: 1500px;
-}
-
-section .tasks-container .task h3 {
-  font-size: 1.3rem;
-}
-
-section .tasks-container .task div {
+section .projects-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
 }
 
-section .tasks-container .task div a {
-  color: var(--font-color);
+.projects-container .project-card {
+  position: relative;
+  background-color: transparent;
+  width: 300px;
+  height: 140px;
+  margin: 3px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 2px var(--ternary-color);
+}
+
+.projects-container .project-card .categories {
+  position: absolute;
+  bottom: 4px;
+  left: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: baseline;
+  align-items: center;
+  gap: 5px;
+  z-index: 1;
+}
+
+.projects-container .project-card .link-demo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-color: var(--ternary-color);
+  color: var(--bg-color);
   text-decoration: none;
-  margin-right: 5px;
-  border-radius: 50px;
-  margin-bottom: 5px;
-  font-size: normal;
-  padding: 0px 6px;
-  transition: 0.3s;
-  border: 2px solid var(--ternary-color);
+  border: 1px solid var(--ternary-color);
+  border-radius: 5px;
+  padding: 5px 10px;
 }
 
-section .tasks-container .task div a:hover {
+.projects-container .project-card .link-demo:hover {
   background-color: transparent;
   color: var(--ternary-color);
-  border: 2px solid var(--ternary-color);
+  border: 1px solid var(--ternary-color);
+}
+
+.projects-container .project-card .git-hub-ico {
+  position: absolute;
+  bottom: 4px;
+  right: 10px;
+  padding: 0;
+}
+
+h3 {
+  color: var(--secondary-font-color);
+  font-size: 1.3rem;
+  margin-bottom: 10px;
 }

@@ -7,7 +7,6 @@ import {
     faBars,
     faGraduationCap,
     faListCheck,
-    faBarsProgress,
     faMoon,
     faSun
 } from '@fortawesome/free-solid-svg-icons'
@@ -47,11 +46,8 @@ const SideNavBar = (props) => {
                 <Link to="/curriculums" >
                     <FontAwesomeIcon icon={faGraduationCap} />
                 </Link>
-                <Link to="/tasks" >
-                    <FontAwesomeIcon icon={faListCheck} />
-                </Link>
                 <Link to="/projects" >
-                    <FontAwesomeIcon icon={faBarsProgress} />
+                    <FontAwesomeIcon icon={faListCheck} />
                 </Link>
             </nav>
 
