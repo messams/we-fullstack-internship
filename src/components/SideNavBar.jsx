@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -21,11 +21,16 @@ import {
 import propTypes from 'prop-types'
 
 const SideNavBar = (props) => {
+    const activeStyles = {
+        backgroundColor: 'var(--ternary-color)',
+    }
     return (
         <header>
-
             <div className="logo">
-                <Link to="/" className='link'>
+                <NavLink
+                    to="/"
+                    end
+                    className='link'>
                     <img
                         src={
                             props.theme === 'light' ? '/images/Light-300-300px.png' : '/images/Dark-300-300px.png'
@@ -33,22 +38,35 @@ const SideNavBar = (props) => {
                         alt="logo"
                         className='logo-ico'
                     />
-                </Link>
+                </NavLink>
             </div>
 
             <nav className='nav-links'>
-                <Link to="/">
+                <NavLink
+                    to="/"
+                    end
+                    style={({ isActive }) => isActive ? activeStyles : undefined}
+                >
                     <FontAwesomeIcon icon={faHouse} />
-                </Link>
-                <Link to="/about">
+                </NavLink>
+                <NavLink
+                    to="/about"
+                    style={({ isActive }) => isActive ? activeStyles : undefined}
+                >
                     <FontAwesomeIcon icon={faBars} />
-                </Link>
-                <Link to="/curriculums" >
+                </NavLink >
+                <NavLink
+                    to="/curriculums"
+                    style={({ isActive }) => isActive ? activeStyles : undefined}
+                >
                     <FontAwesomeIcon icon={faGraduationCap} />
-                </Link>
-                <Link to="/projects" >
+                </NavLink >
+                <NavLink
+                    to="/projects"
+                    style={({ isActive }) => isActive ? activeStyles : undefined}
+                >
                     <FontAwesomeIcon icon={faListCheck} />
-                </Link>
+                </NavLink>
             </nav>
 
 
