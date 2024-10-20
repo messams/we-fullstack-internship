@@ -1,8 +1,34 @@
-# React + Vite
+# My WeFullStack Internship Journey
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> This app built with React, Vite, and CSS Modules.
+> It is a simple React app thst displays abuot me, internship crriculum and the Projects to be completed.
 
-Currently, two official plugins are available:
+## Project setup
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```bash
+npm install
+```
+
+### Compiles and hot-reloads for development
+
+```bash
+npm run dev
+```
+
+## Live Demo
+
+> [Live Demo](https://we-full-stack.netlify.app/)
+
+## 👤 **Author**
+
+- GitHub: [@Mohamed Essam](https://github.com/m-essam-s).
+- LinkedIn: [@Mohamed Essam](https://www.linkedin.com/in/m-essam/).
+- Twitter: [@MohamedEssam](https://x.com/m_essam_s).
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+## License
+
+This project is [MIT](https://opensource.org/licenses/MIT) licensed.
