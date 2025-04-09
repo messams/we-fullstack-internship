@@ -73,7 +73,7 @@ const SideNavBar = (props) => {
             <div className="social-links">
                 <a href="https://www.linkedin.com/in/m-essam/" target="_blank">
                     <FontAwesomeIcon icon={faLinkedinIn} /></a>
-                <a href="https://github.com/m-essam-s" target="_blank">
+                <a href="https://github.com/messams" target="_blank">
                     <FontAwesomeIcon icon={faGithub} /></a>
                 <a href="https://x.com/m_essam_s" target="_blank">
                     <FontAwesomeIcon icon={faXTwitter} />
